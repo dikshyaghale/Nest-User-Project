@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const UserApp = () => {
   const [formData, setFormData] = useState({
@@ -46,10 +44,8 @@ const UserApp = () => {
       }
 
       const data = await response.json();
-      console.log("API response:", data);
       if (data.statusCode === 201) {
-        console.log("success");
-        toast.success("User created successfully!");
+        alert("User created successfully!");
       }
     } catch (error) {
       console.error("API request error:", error);
