@@ -46,11 +46,21 @@ export class UserEntity extends DateAudit {
   nationality: string;
 
   @ApiProperty({ enum: EducationBackgroundEnum })
-  @Column({ nullable: true, type: "enum", enum: EducationBackgroundEnum })
+  @Column({
+    nullable: true,
+    type: "enum",
+    enum: EducationBackgroundEnum,
+    default: EducationBackgroundEnum.BACHELOR_DEGREE,
+  })
   educationBackground: string;
 
   @ApiProperty({ enum: ContactEnum })
-  @Column({ nullable: true, type: "enum", enum: ContactEnum })
+  @Column({
+    nullable: true,
+    type: "enum",
+    enum: ContactEnum,
+    default: ContactEnum.PHONE,
+  })
   contact: string;
 
   constructor(partial: DeepPartial<UserEntity> = null) {
