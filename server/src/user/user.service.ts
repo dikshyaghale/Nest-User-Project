@@ -20,7 +20,7 @@ export class UserService {
       .limit(params.take)
       .offset(params.skip)
       .orderBy("user.id", params.order)
-      .getMany();
+      .getManyAndCount();
   };
 
   findOne = async (userId: string) => {
